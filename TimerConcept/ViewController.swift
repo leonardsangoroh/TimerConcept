@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let colors: [UIColor] = [.systemRed, .systemBlue, .systemCyan, .systemMint, .systemPink, .systemTeal]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +25,11 @@ class ViewController: UIViewController {
                                          target: self,
                                          selector: #selector(fireTimer),
                                          userInfo: nil,
-                                         repeats: false)
-        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
-            timer.fire()
-        })
+                                         repeats: true)
     }
     
     @objc func fireTimer(){
-        view.backgroundColor = .systemRed
+        view.backgroundColor = colors.randomElement()
     }
 }
 
