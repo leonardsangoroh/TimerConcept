@@ -26,6 +26,9 @@ class ViewController: UIViewController {
                                          selector: #selector(fireTimer),
                                          userInfo: nil,
                                          repeats: true)
+        /// in miliseconds
+        /// gives system time flexibility to execute tasks
+        timer.tolerance = 200
     }
     
     @objc func fireTimer(){
